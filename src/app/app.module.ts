@@ -4,15 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ComponentBuilderDirective } from './shared/directives/component-builder.directive';
+import { FieldsModule } from './shared/fields/fields.module'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ComponentBuilderDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    FieldsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

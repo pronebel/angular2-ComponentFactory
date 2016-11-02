@@ -1,3 +1,9 @@
-<h1>
-  {{title}}
-</h1>
+<select class="form-control" [(ngModel)]="field.type" (change)="selectType($event.target.value, field)">
+  <optgroup *ngFor="let fieldT of fields" [label]="fieldT.type">
+    <option *ngFor="let fieldSubType of fieldT.sub_types" [value]="fieldSubType.component">
+      {{fieldSubType.name | uppercase}}
+    </option>
+  </optgroup>
+</select>
+
+<div *ngIf="comp" [refComponentBuilder]="comp"></div>
